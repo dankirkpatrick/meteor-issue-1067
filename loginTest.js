@@ -8,7 +8,7 @@ if (Meteor.isClient) {
             //TL.debug("logging in {" + user + "," + pw + "}");
             Meteor.loginWithPassword(user, pw, function(error) {
                 if (error) {
-                    TL.debug("error: " + error.reason);
+                    //TL.debug("error: " + error.reason);
                 }
             });
         },
