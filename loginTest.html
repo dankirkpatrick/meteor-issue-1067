@@ -1,0 +1,33 @@
+<head>
+  <title>loginTest</title>
+</head>
+
+<body>
+  {{#if currentUser}}
+  {{> main}}
+  {{else}}
+  {{#if loggingIn}}
+  {{> main}}
+  {{else}}
+  {{> login}}
+  {{/if}}
+  {{/if}}
+</body>
+
+<template name="login">
+    <label for="username">Username: </label>
+    <input type="text" name="username" class="username" id="username"/>
+    <label for="password">Password: </label>
+    <input type="password" name="password" class="password" id="password"/>
+    <a href="#" class="btn submit">Submit</a>
+    <a href="#" class="btn create">Create</a>
+</template>
+
+<template name="main">
+    {{#if loggingIn}}
+    <h2>Logging in...</h2>
+    {{else}}
+    <h2>This is the main page.</h2>
+    <a href="#" class="btn logout">Logout</a>
+    {{/if}}
+</template>
